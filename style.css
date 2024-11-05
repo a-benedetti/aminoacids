@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.amino-acid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 10px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.amino-acid {
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.amino-acid svg {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.tile-text {
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.tile-nonpolar { background-color: #b0e8a0; }
+.tile-polar-uncharged { background-color: #fff2a0; }
+.tile-polar-base { background-color: #a0c9ff; }
+.tile-polar-acid { background-color: #ffb0b0; }
+
+.amino-acid:hover {
+    filter: brightness(0.9);
+}
+
+/* Card styling remains unchanged */
+.card {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+#close-card {
+    align-self: flex-end;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+}
+
+.view-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#toggle-view {
+    margin-top: 10px;
+}
+
+#amino-acid-info {
+    text-align: left;
+}
+
+#view-3d {
+    width: 100%;
+    height: 300px; /* Adjust as needed */
+    position: relative;
+}
+
+#viewer3d {
+    width: 100%;
+    height: 100%;
+}
