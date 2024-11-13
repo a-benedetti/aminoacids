@@ -2,47 +2,84 @@ document.addEventListener("DOMContentLoaded", function () {
     let currentResidue = "";
     let is2DView = true;
     let aminoAcidData = {};
+    let openCards = [];
+
+
+    // Helper function to make a card draggable
+    function makeCardDraggable(card) {
+        let isDragging = false;
+        let offsetX = 0;
+        let offsetY = 0;
+
+        card.addEventListener("mousedown", (event) => {
+            isDragging = true;
+            offsetX = event.clientX - card.getBoundingClientRect().left;
+            offsetY = event.clientY - card.getBoundingClientRect().top;
+            card.style.zIndex = 1000; // Bring the card to the front
+        });
+
+        document.addEventListener("mousemove", (event) => {
+            if (isDragging) {
+                const left = event.clientX - offsetX;
+                const top = event.clientY - offsetY;
+
+                // Prevent the card from going off-screen
+                card.style.left = `${Math.max(0, Math.min(window.innerWidth - card.offsetWidth, left))}px`;
+                card.style.top = `${Math.max(0, Math.min(window.innerHeight - card.offsetHeight, top))}px`;
+            }
+        });
+
+        document.addEventListener("mouseup", () => {
+            if (isDragging) {
+                isDragging = false;
+                card.style.zIndex = ""; // Reset zIndex
+            }
+        });
+    }
 
     // Load amino acid data and populate tiles
     async function loadAminoAcidData() {
         try {
-            const response = await fetch("data/amino_acids.json");
+            const response = await fetch("data/reformatted_amino_acids.json");
             const data = await response.json();
             aminoAcidData = data;
-    
+
             const container = document.getElementById("amino-acid-container");
             if (!container) {
                 console.error("Container element 'amino-acid-container' not found.");
                 return;
             }
-    
+
             Object.keys(data).forEach(residue => {
                 const aminoAcid = data[residue];
                 const tile = document.createElement("div");
-                tile.className = `amino-acid tile-${aminoAcid.polarity.replace(" ", "-").toLowerCase()}`;
+                tile.className = `amino-acid tile-${aminoAcid.charge.replace(" ", "-").toLowerCase()}`;
                 tile.dataset.residue = residue;
-    
+
                 // Generate the SVG image using OpenChemLib
                 const molecule = OCL.Molecule.fromSmiles(aminoAcid.smiles);
-    
+
                 // Configure rendering options
                 const options = {
                     width: 100,
                     height: 100,
                     noImplicitAtomLabelColors: true, // Render atom labels in black
                     suppressChiralText: true,         // Remove chiral indicators if desired
+                    noStereoProblem: true,
+                    suppressCIPParity: true,
                     useGlobalAtomFontSize: true,
                     atomFontSize: 8,
                     strokeWidth: 1,
-                    mapReactionAtoms: false,
-                    compactDrawing: false,
+                    mapReactionAtoms: true,
+                    compactDrawing: true,
+                    suppressESR: true,
                 };
-    
+
                 const svg = molecule.toSVG(options.width, options.height, undefined, options);
-    
+
                 // Modify SVG to ensure all strokes are black
                 const blackSvg = svg.replace(/stroke="[^"]*"/g, 'stroke="#000"').replace(/fill="[^"]*"/g, 'fill="none"');
-    
+
                 // Construct the tile content
                 tile.innerHTML = `
                     ${blackSvg}
@@ -58,21 +95,42 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error loading amino acid data:", error);
         }
     }
+
     
 
     // Render 2D structure with OpenChemLib
-    function render2D(smiles) {
+    function render2D(smiles, targetElement) {
         try {
             const molecule = OCL.Molecule.fromSmiles(smiles);
-            const svg = molecule.toSVG(200, 200);
-            const view2D = document.getElementById("view-2d");
-            if (view2D) {
-                view2D.innerHTML = svg;
+            const options = {
+                width: 200,
+                height: 120,
+                noImplicitAtomLabelColors: true, // Render atom labels in black
+                suppressChiralText: true,        // Remove chiral indicators
+                noStereoProblem: true,
+                suppressCIPParity: true,
+                useGlobalAtomFontSize: true,
+                atomFontSize: 8,
+                strokeWidth: 1,
+                mapReactionAtoms: true,
+                compactDrawing: true,
+                suppressESR: true,
+            };
+
+            const svg = molecule.toSVG(options.width, options.height, undefined, options);
+
+    
+            // Modify SVG to ensure all strokes are white
+            const whiteSvg = svg.replace(/stroke="[^"]*"/g, 'stroke="#FFF"').replace(/fill="[^"]*"/g, 'fill="none"');
+    
+            if (targetElement) {
+                targetElement.innerHTML = whiteSvg;
             }
         } catch (error) {
             console.error("Error rendering 2D structure:", error);
         }
     }
+    
 
     // Render 3D structure using 3Dmol.js and PubChem
     function render3D(residue) {
@@ -126,38 +184,73 @@ document.addEventListener("DOMContentLoaded", function () {
             currentResidue = residue;
             is2DView = true;
 
-            render2D(data.smiles); // Render 2D structure
+            // Clone the template and populate it with the amino acid data
+            const template = document.getElementById("amino-acid-card-template");
+            const clone = template.content.cloneNode(true);
+            const aminoAcidCard = clone.querySelector(".card");
 
-            const aminoAcidInfo = document.getElementById("amino-acid-info");
-            if (aminoAcidInfo) {
-                aminoAcidInfo.innerHTML = `
-                    <strong>Name:</strong> ${data.name}<br>
-                    <strong>Abbreviations:</strong> ${data.abbr.three}, ${data.abbr.one}<br>
-                    <strong>Formula:</strong> ${data.formula}<br>
-                    <strong>Molecular Weight:</strong> ${data.weight}<br>
-                    <strong>Polarity:</strong> ${data.polarity}<br>
-                    <strong>Hydropathy Index:</strong> ${data.hydropathyIndex}<br>
-                    <strong>Charge:</strong> ${data.charge}<br>
-                    <strong>Side Chain:</strong> ${data.sideChain}<br>
-                    <strong>SMILES:</strong> ${data.smiles}<br>
-                    <strong>InChI:</strong> ${data.inchi}<br>
-                    <strong>Biochemical Role:</strong> ${data.biochemicalRole}<br>
-                    <strong>Essentiality:</strong> ${data.essentiality}<br>
-                    <strong>Codons:</strong> ${data.codons}<br>
-                `;
+            // Set up the 2D and 3D view elements and toggle button
+            const view2D = aminoAcidCard.querySelector(".view-2d");
+            const view3D = aminoAcidCard.querySelector(".view-3d");
+            const toggleViewButton = aminoAcidCard.querySelector(".toggle-view");
+
+            // Render the 2D structure inside the cloned card's `view-2d` container
+            render2D(data.smiles, view2D);
+
+            // Populate the card with amino acid information
+            const aminoAcidInfo = aminoAcidCard.querySelector(".amino-acid-info");
+            aminoAcidInfo.innerHTML = ""; // Clear existing content
+
+            Object.keys(data).forEach(key => {
+                if (typeof data[key] === "object" && data[key] !== null) {
+                    aminoAcidInfo.innerHTML += `<strong>${capitalizeFirstLetter(key)}:</strong><br>`;
+                    Object.keys(data[key]).forEach(subKey => {
+                        aminoAcidInfo.innerHTML += `&emsp;<strong>${capitalizeFirstLetter(subKey)}:</strong> ${data[key][subKey]}<br>`;
+                    });
+                } else {
+                    aminoAcidInfo.innerHTML += `<strong>${capitalizeFirstLetter(key)}:</strong> ${data[key]}<br>`;
+                }
+            });
+
+            // Position the card near the clicked tile
+            const tile = document.querySelector(`[data-residue="${residue}"]`);
+            const tileRect = tile.getBoundingClientRect();
+            aminoAcidCard.style.position = "absolute";
+            aminoAcidCard.style.left = `${tileRect.right + 10}px`;
+            aminoAcidCard.style.top = `${tileRect.top}px`;
+
+            // Add event listeners for the toggle view and close button
+            toggleViewButton.addEventListener("click", toggleView);
+            aminoAcidCard.querySelector(".close-card").addEventListener("click", () => {
+                aminoAcidCard.remove();
+                openCards = openCards.filter(card => card !== aminoAcidCard); // Remove card from openCards array
+            });
+
+            // Make the card draggable
+            makeCardDraggable(aminoAcidCard);
+
+            // Append the cloned card to the body
+            document.body.appendChild(aminoAcidCard);
+
+            // Add the card to the openCards array
+            openCards.push(aminoAcidCard);
+
+            // If more than 3 cards are open, close the oldest one
+            if (openCards.length > 3) {
+                const oldestCard = openCards.shift(); // Remove the oldest card from the array
+                oldestCard.remove(); // Remove the card from the DOM
             }
 
-            const aminoAcidCard = document.getElementById("amino-acid-card");
-            if (aminoAcidCard) {
-                aminoAcidCard.classList.remove("hidden");
-            }
-            const view2D = document.getElementById("view-2d");
-            const view3D = document.getElementById("view-3d");
-            const toggleViewButton = document.getElementById("toggle-view");
+            // Initial view settings for 2D and 3D
             if (view2D) view2D.style.display = "block";
             if (view3D) view3D.style.display = "none";
             if (toggleViewButton) toggleViewButton.textContent = "Switch to 3D View";
         }
+    }
+
+    // Helper function to capitalize the first letter of a key
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1).replace(/_/g, ' ');
     }
 
     // Toggle between 2D and 3D views
