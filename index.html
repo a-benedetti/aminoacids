@@ -5,7 +5,7 @@
     <title>Interactive Amino Acid Table</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://www.lactame.com/lib/openchemlib/8.16.0/openchemlib-full.js"></script>
-    <script src="https://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="https://3dmol.org/build/3Dmol-min.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
@@ -13,30 +13,22 @@
         <!-- Tiles dynamically created by JavaScript -->
     </div>
 
-    <!-- Card that opens on click -->
-    <div id="amino-acid-card" class="card hidden">
-        <button id="close-card" onclick="closeCard()">X</button>
-        <div id="view-box">
-            <!-- 2D View SVG? -->
-            <div id="view-2d"></div>
-            <!-- 3D View Container 3Dmol.js? -->
-            <div id="view-3d" class="hidden">
-                <div id="viewer3d" style="width: 300px; height: 200px;"></div>
+    <!-- Template for amino acid cards -->
+    <template id="amino-acid-card-template">
+        <div class="card">
+            <button class="close-card">X</button>
+            <div class="view-box">
+                <div class="view-2d"></div>
+                <div class="view-3d hidden">
+                    <div class="viewer3d" style="width: 300px; height: 200px;"></div>
+                </div>
             </div>
-            
-            <button id="toggle-view" onclick="toggleView()">Switch to 3D View</button>
+            <button class="toggle-view">Switch to 3D View</button> <!-- Ensure this button is included -->
+            <div class="amino-acid-info">
+                <!-- Information populated dynamically from JSON data -->
+            </div>
         </div>
-        <div id="amino-acid-info">
-            <!-- Information populated dynamically from JSON data -->
-        </div>
-        <div id="interaction-controls">
-            <button onclick="highlightInteraction('hydrogenBonds')">Hydrogen Bonds</button>
-            <button onclick="highlightInteraction('saltBridges')">Salt Bridges</button>
-            <button onclick="highlightInteraction('disulfideBridges')">Disulfide Bridges</button>
-        </div>
-    </div>
-
-
+    </template>
     
 </body>
 </html>
