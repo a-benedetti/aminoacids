@@ -1,0 +1,582 @@
+{
+    "alanine": {
+        "name": "Alanine",
+        "abbr": {
+            "three": "Ala",
+            "one": "A"
+        },
+        "structure2D": "images/ala.svg",
+        "formula": "C3H7NO2",
+        "weight": "89.094 Da",
+        "density": "1.424 g/cm3",
+        "solubility_water": "167.2 g/L (25 \u00c2\u00b0C)",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "41",
+        "pka": "2.34",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "O=C(O)C(N)C",
+        "inchi": "InChI=1S/C2H4NH2COOH/c1-2(4)3(5)6/h2H,4H2,1H3,...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "GCT, GCC, GCA, GCG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Alanine Aminotransferase",
+        "frequence in proteins": "7.5",
+        "other_names": "2-Aminopropanoic acid"
+    },
+    "arginine": {
+        "name": "Arginine",
+        "abbr": {
+            "three": "Arg",
+            "one": "R"
+        },
+        "structure2D": "images/arg.svg",
+        "formula": "C6H14N4O2",
+        "weight": "174.204 Da",
+        "density": "1.5\u00c2\u00b10.1 g/cm3",
+        "solubility_water": "14.87 g/100 mL (20 \u00c2\u00b0C)",
+        "class": "Basic",
+        "polarity": "Neutral",
+        "hydrophobicity_ph7": "-14",
+        "pka": "2.17",
+        "charge": "Positive",
+        "sideChain": "N/A",
+        "smiles": "NC(CCCNC(N)=N)C(O)=O",
+        "inchi": "InChI=1S/C6H14N4O2/c7-4(5(11)12)2-1-3-10-6(8)9...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "CGT, CGC, CGA, CGG, AGA, AGG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Arginase",
+        "frequence in proteins": "5.0",
+        "other_names": "2-Amino-5-guanidinopentanoic acid"
+    },
+    "asparagine": {
+        "name": "Asparagine",
+        "abbr": {
+            "three": "Asn",
+            "one": "N"
+        },
+        "structure2D": "images/asn.svg",
+        "formula": "C4H8N2O3",
+        "weight": "132.119 Da",
+        "density": "1.543 g/cm3",
+        "solubility_water": "2.94 g/100 mL",
+        "class": "Amidic",
+        "polarity": "Polar",
+        "hydrophobicity_ph7": "-28",
+        "pka": "2.02",
+        "charge": "Polar uncharged",
+        "sideChain": "N/A",
+        "smiles": "O=C(N)C[C@H](N)C(=O)O",
+        "inchi": "InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "AAT, AAC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Asparagine Synthetase; Asparaginase",
+        "frequence in proteins": "4.5",
+        "other_names": "2-Amino-3-carbamoylpropanoic acid"
+    },
+    "aspartic_acid": {
+        "name": "Aspartic acid",
+        "abbr": {
+            "three": "Asp",
+            "one": "D"
+        },
+        "structure2D": "images/asp.svg",
+        "formula": "C4H7NO4",
+        "weight": "133.103 Da",
+        "density": "1.7 g/cm3",
+        "solubility_water": "4.5 g/L",
+        "class": "Acidic",
+        "polarity": "Neutral",
+        "hydrophobicity_ph7": "-55",
+        "pka": "1.88",
+        "charge": "Negative",
+        "sideChain": "N/A",
+        "smiles": "O=C(O)CC(N)C(=O)O",
+        "inchi": "InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "GAT, GAC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Aspartic Protease; Aspartic Proteinase",
+        "frequence in proteins": "5.0",
+        "other_names": "Aminosuccinic acid; Asparagic acid; Asparagini..."
+    },
+    "cysteine": {
+        "name": "Cysteine",
+        "abbr": {
+            "three": "Cys",
+            "one": "C"
+        },
+        "structure2D": "images/cys.svg",
+        "formula": "C3H7NO2S",
+        "weight": "121.150 Da",
+        "density": "1.3\u00c2\u00b10.1 g/cm",
+        "solubility_water": "soluble",
+        "class": "Sulfur-containing",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "49",
+        "pka": "1.96",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "C([C@@H](C(=O)O)N)S",
+        "inchi": "InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "TGT, TGC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Cysteine Protease; Cysteine Peptidase",
+        "frequence in proteins": "2.0",
+        "other_names": "2-Amino-3-sulfhydrylpropanoic acid"
+    },
+    "glutamic_acid": {
+        "name": "Glutamic acid",
+        "abbr": {
+            "three": "Glu",
+            "one": "E"
+        },
+        "structure2D": "images/glu.svg",
+        "formula": "C5H9NO4",
+        "weight": "147.130 Da",
+        "density": "1.4601 (20 \u00c2\u00b0C)",
+        "solubility_water": "7.5 g/L (20 \u00c2\u00b0C)",
+        "class": "Acidic",
+        "polarity": "Neutral",
+        "hydrophobicity_ph7": "-31",
+        "pka": "2.19",
+        "charge": "Negative",
+        "sideChain": "N/A",
+        "smiles": "C(CC(=O)O)[C@@H](C(=O)O)N",
+        "inchi": "InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "GAA, GAG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Glutamic Acid Decarboxylase",
+        "frequence in proteins": "6.5",
+        "other_names": "2-Aminoglutaric acid"
+    },
+    "glutamine": {
+        "name": "Glutamine",
+        "abbr": {
+            "three": "Gln",
+            "one": "Q"
+        },
+        "structure2D": "images/gln.svg",
+        "formula": "C5H10N2O3",
+        "weight": "146.146 Da",
+        "density": "1.47 g/cm3 (20 \u00c2\u00b0C)",
+        "solubility_water": "soluble",
+        "class": "Amidic",
+        "polarity": "Polar",
+        "hydrophobicity_ph7": "-10",
+        "pka": "2.17",
+        "charge": "Polar uncharged",
+        "sideChain": "N/A",
+        "smiles": "O=C(N)CCC(N)C(=O)O",
+        "inchi": "InChI=1S/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "CAA, CAG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Glutamine Synthetase",
+        "frequence in proteins": "4.0",
+        "other_names": "L-Glutamine; (levo)glutamide; 2,5-Diamino-5-ox..."
+    },
+    "glycine": {
+        "name": "Glycine",
+        "abbr": {
+            "three": "Gly",
+            "one": "G"
+        },
+        "structure2D": "images/gly.svg",
+        "formula": "C2H5NO2",
+        "weight": "75.067 Da",
+        "density": "1.1607 g/cm3",
+        "solubility_water": "24.99 g/100 mL (25 \u00c2\u00b0C)",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "0",
+        "pka": "2.34",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "C(C(=O)O)N",
+        "inchi": "InChI=1S/C2H5NH2/c3-1-2(4)5/h1,3H2,(H,4,5); Ke...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "GGT, GGC, GGA, GGG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Glycine Decarboxylase Complex; Glycine Hydroxymethyltransferase; Glycine N-Methyltransferase",
+        "frequence in proteins": "7.0",
+        "other_names": "2-Aminoethanoic acid, Glycocoll"
+    },
+    "histidine": {
+        "name": "Histidine",
+        "abbr": {
+            "three": "His",
+            "one": "H"
+        },
+        "structure2D": "images/his.svg",
+        "formula": "C6H9N3O2",
+        "weight": "155.157 Da",
+        "density": "1.4\u00c2\u00b10.1 g/cm3",
+        "solubility_water": "4.19g/100g @ 25 \u00c2\u00b0C",
+        "class": "Basic",
+        "polarity": "Neutral",
+        "hydrophobicity_ph7": "8",
+        "pka": "1.82",
+        "charge": "Positive",
+        "sideChain": "N/A",
+        "smiles": "O=C([C@H](CC1=CNC=N1)N)O",
+        "inchi": "InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "CAT, CAC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Histidine Ammonia-Lyase; Histidine Decarboxylase; Histidine Acid Phytases",
+        "frequence in proteins": "2.0",
+        "other_names": "2-Amino-3-(1H-imidazol-4-yl)propanoic acid"
+    },
+    "isoleucine": {
+        "name": "Isoleucine",
+        "abbr": {
+            "three": "Ile",
+            "one": "I"
+        },
+        "structure2D": "images/ile.svg",
+        "formula": "C6H13NO2",
+        "weight": "131.175 Da",
+        "density": "?1.0\u00c2\u00b10.1 g/cm3",
+        "solubility_water": "soluble",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "99",
+        "pka": "2.36",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "CC[C@H](C)[C@@H](C(=O)O)N",
+        "inchi": "InChI=1S/C6H13NO2/c1-3-4(2)5(7)6(8)9/h4-5H,3,7...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "ATT, ATC, ATA",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "L-Isoleucine 4-Hydroxlase; Isoleucine 2-Epimerase",
+        "frequence in proteins": "5.5",
+        "other_names": "(2S,3S)-2-amino-3-methylpentanoic acid"
+    },
+    "leucine": {
+        "name": "Leucine",
+        "abbr": {
+            "three": "Leu",
+            "one": "L"
+        },
+        "structure2D": "images/leu.svg",
+        "formula": "C6H13NO2",
+        "weight": "131.175 Da",
+        "density": "1.17 g/cm3 at 20 \u00c2\u00b0C",
+        "solubility_water": "soluble",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "97",
+        "pka": "2.36",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "CC(C)C[C@@H](C(=O)O)N",
+        "inchi": "InChI=1S/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "CTT, CTC, CTA, CTG, TTA, TTG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Leucine Dehydrogenase; Leucine Aminotransferase; Leucine Transaminase; Leucine Deacylase; Leucine Aminopeptidase",
+        "frequence in proteins": "9.0",
+        "other_names": "2-Amino-4-methylpentanoic acid"
+    },
+    "lysine": {
+        "name": "Lysine",
+        "abbr": {
+            "three": "Lys",
+            "one": "K"
+        },
+        "structure2D": "images/lys.svg",
+        "formula": "C6H14N2O2",
+        "weight": "146.190 Da",
+        "density": "1.1\u00c2\u00b10.1 g/cm 3",
+        "solubility_water": "1.5 kg/L",
+        "class": "Basic",
+        "polarity": "Neutral",
+        "hydrophobicity_ph7": "-23",
+        "pka": "2.18",
+        "charge": "Positive",
+        "sideChain": "N/A",
+        "smiles": "NCCCCC(N)C(=O)O",
+        "inchi": "InChI=1S/C6H14N2O2/c7-4-2-1-3-5(8)6(9)10/h5H,1...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "AAA, AAG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Lysine a-Ketoglutarate Reductase; I-Lysine Monooxygenase; I-Lysine Decarboxylase; Lysine Oxidase; Lysine 2,3-Aminomutase",
+        "frequence in proteins": "6.0",
+        "other_names": "Lysine, D-Lysine, L-lysine, LYS, h-Lys-OH"
+    },
+    "methionine": {
+        "name": "Methionine",
+        "abbr": {
+            "three": "Met",
+            "one": "M"
+        },
+        "structure2D": "images/met.svg",
+        "formula": "C5H11NO2S",
+        "weight": "149.210 Da",
+        "density": "1.340 g/cm3",
+        "solubility_water": "soluble",
+        "class": "Sulfur-containing",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "74",
+        "pka": "2.28",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "CSCC[C@H](N)C(=O)O",
+        "inchi": "InChI=1S/C5H11NO2S/c1-9-3-2-4(6)5(7)8/h4H,2-3,...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "ATG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Methionine Synthase; Methionine Aminopeptidase",
+        "frequence in proteins": "2.5",
+        "other_names": "2-amino-4-(methylthio)butanoic acid"
+    },
+    "phenylalanine": {
+        "name": "Phenylalanine",
+        "abbr": {
+            "three": "Phe",
+            "one": "F"
+        },
+        "structure2D": "images/phe.svg",
+        "formula": "C9H11NO2",
+        "weight": "165.192 Da",
+        "density": "1.34 g/cm3 at 20 \u00c2\u00b0C",
+        "solubility_water": "soluble",
+        "class": "Aromatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "100",
+        "pka": "1.83",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "N[C@@H](CC1=CC=CC=C1)C(O)=O",
+        "inchi": "InChI=1S/C9H11NO2/c10-8(9(11)12)6-7-4-2-1-3-5-...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "TTT, TTC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Phenylalanine Hydroxylase",
+        "frequence in proteins": "4.0",
+        "other_names": "L-Phenylalanine"
+    },
+    "proline": {
+        "name": "Proline",
+        "abbr": {
+            "three": "Pro",
+            "one": "P"
+        },
+        "structure2D": "images/pro.svg",
+        "formula": "C5H9NO2",
+        "weight": "115.132 Da",
+        "density": "1.35-1.38 g/cm3 at 25 \u00c2\u00b0C",
+        "solubility_water": "soluble",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "-46",
+        "pka": "1.99",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "OC(=O)C1CCCN1",
+        "inchi": "InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "CCT, CCC, CCA, CCG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Proline Dehydrogenase; Proline 3-Hydroxlase",
+        "frequence in proteins": "5.0",
+        "other_names": "L-Proline"
+    },
+    "serine": {
+        "name": "Serine",
+        "abbr": {
+            "three": "Ser",
+            "one": "S"
+        },
+        "structure2D": "images/ser.svg",
+        "formula": "C3H7NO3",
+        "weight": "105.093 Da",
+        "density": "1.603 g/cm3 (22 \u00c2\u00b0C)",
+        "solubility_water": "soluble",
+        "class": "Hydroxylic",
+        "polarity": "Polar",
+        "hydrophobicity_ph7": "-5",
+        "pka": "2.21",
+        "charge": "Polar uncharged",
+        "sideChain": "N/A",
+        "smiles": "C([C@@H](C(=O)O)N)O",
+        "inchi": "InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "TCT, TCC, TCA, TCG, AGT, AGC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Serine Protease; Serine Endopeptidase; Serine Racemase",
+        "frequence in proteins": "7.5",
+        "other_names": "2-Amino-3-hydroxypropanoic acid"
+    },
+    "threonine": {
+        "name": "Threonine",
+        "abbr": {
+            "three": "Thr",
+            "one": "T"
+        },
+        "structure2D": "images/thr.svg",
+        "formula": "C4H9NO3",
+        "weight": "119.120 Da",
+        "density": "1.3\u00c2\u00b10.1 g/cm 3",
+        "solubility_water": "(H2O, g/dl) 10.6(30\u00c2\u00b0),14.1(52\u00c2\u00b0),19.0(61\u00c2\u00b0)",
+        "class": "Hydroxylic",
+        "polarity": "Polar",
+        "hydrophobicity_ph7": "13",
+        "pka": "2.09",
+        "charge": "Polar uncharged",
+        "sideChain": "N/A",
+        "smiles": "C[C@H]([C@@H](C(=O)O)N)O",
+        "inchi": "InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "ACT, ACC, ACA, ACG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Threonine Ammonia-Lyase; Threonine Deaminase; Threonine Dehydratase; Threonine Aldolase",
+        "frequence in proteins": "6.0",
+        "other_names": "2-Amino-3-hydroxybutanoic acid"
+    },
+    "tryptophan": {
+        "name": "Tryptophan",
+        "abbr": {
+            "three": "Trp",
+            "one": "W"
+        },
+        "structure2D": "images/trp.svg",
+        "formula": "C11H12N2O2",
+        "weight": "204.229 Da",
+        "density": "1.4\u00c2\u00b10.1 g/cm3",
+        "solubility_water": "Soluble: 0.23 g/L at 0 \u00c2\u00b0C, 11.4 g/L at 25 \u00c2\u00b0C",
+        "class": "Aromatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "97",
+        "pka": "2.83",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "c1ccc2c(c1)c(c[nH]2)C[C@@H](C(=O)O)N",
+        "inchi": "InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "TGG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Tryptophan Synthase; Tryptophan 2,3-Dioxygenase",
+        "frequence in proteins": "1.5",
+        "other_names": "2-Amino-3-(1H-indol-3-yl)propanoic acid"
+    },
+    "tyrosine": {
+        "name": "Tyrosine",
+        "abbr": {
+            "three": "Tyr",
+            "one": "Y"
+        },
+        "structure2D": "images/tyr.svg",
+        "formula": "C9H11NO3",
+        "weight": "181.191 Da",
+        "density": "1.46 g/cm3 at 20 \u00c2\u00b0C",
+        "solubility_water": ".0453 g/100 mL",
+        "class": "Aromatic",
+        "polarity": "Polar",
+        "hydrophobicity_ph7": "63",
+        "pka": "2.20",
+        "charge": "Polar uncharged",
+        "sideChain": "N/A",
+        "smiles": "N[C@@H](Cc1ccc(O)cc1)C(O)=O",
+        "inchi": "InChI=1S/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "TAT, TAC",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "Tyrosinase; Tyrosine Hydroxylase; Tyrosine Kinase; Tyrosine Decarboxylase",
+        "frequence in proteins": "3.5",
+        "other_names": "L-2-Amino-3-(4-hydroxyphenyl)propanoic acid"
+    },
+    "valine": {
+        "name": "Valine",
+        "abbr": {
+            "three": "Val",
+            "one": "V"
+        },
+        "structure2D": "images/val.svg",
+        "formula": "C5H11NO2",
+        "weight": "117.148 Da",
+        "density": "1.316 g/cm3",
+        "solubility_water": "soluble",
+        "class": "Aliphatic",
+        "polarity": "Nonpolar",
+        "hydrophobicity_ph7": "76",
+        "pka": "2.32",
+        "charge": "Nonpolar",
+        "sideChain": "N/A",
+        "smiles": "CC(C)[C@@H](C(=O)O)N",
+        "inchi": "InChI=1S/C5H11NO2/c1-3(2)4(6)5(7)8/h3-4H,6H2,1...",
+        "biochemicalRole": "N/A",
+        "essentiality": "N/A",
+        "codons": "GTT, GTC, GTA, GTG",
+        "interactions": [
+            "N/A"
+        ],
+        "enzymes": "L-Valine Dehydrogenase",
+        "frequence in proteins": "6.5",
+        "other_names": "2-Amino-3-methylbutanoic acid"
+    }
+}
